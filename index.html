@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Mohammad Saad Memon | Resume</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    :root{
+      --dark:#06111f;
+      --navy:#0f172a;
+      --blue:#2563eb;
+      --cyan:#22d3ee;
+      --light:#f8fafc;
+      --white:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --border:#dbeafe;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:
+      radial-gradient(circle at top left,#1e3a8a 0%,#dbeafe 45%,#f8fafc 100%);
+      min-height:100vh;
+      padding:30px;
+      color:var(--text);
+    }
+
+    .resume-page{
+      width:210mm;
+      min-height:297mm;
+      margin:auto;
+      background:rgba(255,255,255,0.96);
+      backdrop-filter:blur(18px);
+      display:grid;
+      grid-template-columns:32% 68%;
+      border-radius:24px;
+      overflow:hidden;
+
+      box-shadow:
+      0 25px 60px rgba(15,23,42,.25),
+      0 8px 20px rgba(37,99,235,.12);
+
+      animation:fadeIn .7s ease;
+    }
+
+    /* SIDEBAR */
+
+    .sidebar{
+      background:
+      linear-gradient(180deg,#07111f 0%,#0f172a 35%,#1e3a8a 100%);
+
+      color:white;
+      padding:30px 24px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .sidebar::before{
+      content:'';
+      position:absolute;
+      width:220px;
+      height:220px;
+      background:rgba(34,211,238,.18);
+      border-radius:50%;
+      top:-70px;
+      left:-70px;
+      filter:blur(10px);
+    }
+
+    .sidebar::after{
+      content:'';
+      position:absolute;
+      width:180px;
+      height:180px;
+      background:rgba(37,99,235,.22);
+      border-radius:50%;
+      bottom:-60px;
+      right:-60px;
+      filter:blur(10px);
+    }
+
+    /* PROFILE */
+
+    .profile-box{
+      text-align:center;
+      position:relative;
+      z-index:2;
+      margin-bottom:28px;
+    }
+
+    .profile-ring{
+      width:155px;
+      height:155px;
+      margin:auto;
+      border-radius:50%;
+      padding:5px;
+
+      background:linear-gradient(
+      135deg,
+      #22d3ee,
+      #2563eb,
+      #7c3aed,
+      #22d3ee
+      );
+
+      background-size:300% 300%;
+
+      animation:ringMove 6s ease infinite;
+
+      box-shadow:
+      0 15px 45px rgba(34,211,238,.35),
+      0 0 30px rgba(37,99,235,.25);
+    }
+
+    .profile-img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
+      border:4px solid #0f172a;
+      display:block;
+      transition:.4s ease;
+    }
+
+    .profile-img:hover{
+      transform:scale(1.03);
+    }
+
+    @keyframes ringMove{
+      0%{
+        background-position:0% 50%;
+      }
+
+      50%{
+        background-position:100% 50%;
+      }
+
+      100%{
+        background-position:0% 50%;
+      }
+    }
+
+    .profile-name{
+      font-family:'Poppins',sans-serif;
+      font-size:25px;
+      font-weight:800;
+      margin-top:18px;
+      line-height:1.15;
+      letter-spacing:.5px;
+    }
+
+    .profile-title{
+      margin-top:8px;
+      color:#bae6fd;
+      font-size:12px;
+      font-weight:600;
+    }
+
+    /* SIDEBAR SECTIONS */
+
+    .side-section{
+      margin-bottom:24px;
+      position:relative;
+      z-index:2;
+    }
+
+    .side-heading{
+      font-family:'Poppins',sans-serif;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      margin-bottom:12px;
+      color:#67e8f9;
+
+      border-bottom:
+      1px solid rgba(255,255,255,.15);
+
+      padding-bottom:6px;
+    }
+
+    .contact-list,
+    .skill-list{
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+
+    .contact-list li{
+      font-size:11.5px;
+      color:#e0f2fe;
+      line-height:1.5;
+    }
+
+    .skill-list li{
+      background:rgba(255,255,255,.08);
+
+      border:
+      1px solid rgba(255,255,255,.1);
+
+      padding:8px 10px;
+      border-radius:12px;
+      font-size:11px;
+      transition:.3s ease;
+      backdrop-filter:blur(10px);
+    }
+
+    .skill-list li:hover{
+      background:rgba(255,255,255,.16);
+      transform:translateY(-2px);
+    }
+
+    .sidebar a{
+      color:#e0f2fe;
+      text-decoration:none;
+    }
+
+    .sidebar a:hover{
+      color:#67e8f9;
+    }
+
+    /* MAIN */
+
+    .main{
+      padding:34px;
+
+      background:
+      linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+    }
+
+    .main h1{
+      font-family:'Poppins',sans-serif;
+      font-size:36px;
+      color:var(--navy);
+      line-height:1.05;
+    }
+
+    .headline{
+      margin-top:8px;
+      color:var(--blue);
+      font-weight:700;
+      font-size:14px;
+      margin-bottom:18px;
+    }
+
+    .section{
+      margin-bottom:22px;
+    }
+
+    .section-title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+
+      font-family:'Poppins',sans-serif;
+      font-size:16px;
+      color:var(--navy);
+
+      margin-bottom:12px;
+      text-transform:uppercase;
+      letter-spacing:.5px;
+    }
+
+    .section-title::before{
+      content:'';
+      width:7px;
+      height:22px;
+      border-radius:999px;
+
+      background:
+      linear-gradient(180deg,var(--cyan),var(--blue));
+    }
+
+    .summary{
+      color:#334155;
+      font-size:12.5px;
+      text-align:justify;
+      line-height:1.7;
+    }
+
+    /* PROJECTS */
+
+    .project-card{
+      background:white;
+
+      border:
+      1px solid var(--border);
+
+      border-left:5px solid var(--blue);
+
+      border-radius:16px;
+      padding:12px 14px;
+      margin-bottom:12px;
+
+      box-shadow:
+      0 10px 25px rgba(15,23,42,.06);
+
+      transition:.3s ease;
+    }
+
+    .project-card:hover{
+      transform:translateY(-3px);
+
+      box-shadow:
+      0 18px 35px rgba(15,23,42,.12);
+    }
+
+    .project-title{
+      font-size:13px;
+      font-weight:800;
+      color:var(--navy);
+      margin-bottom:4px;
+    }
+
+    .project-meta{
+      font-size:11px;
+      color:var(--blue);
+      font-weight:700;
+      margin-bottom:4px;
+    }
+
+    .project-card p{
+      font-size:11.5px;
+      color:#475569;
+    }
+
+    /* TWO COLUMN */
+
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .mini-card{
+      background:white;
+
+      border:
+      1px solid var(--border);
+
+      border-radius:16px;
+      padding:12px 14px;
+
+      box-shadow:
+      0 8px 20px rgba(15,23,42,.05);
+    }
+
+    .mini-card h3{
+      font-size:13px;
+      color:var(--navy);
+      margin-bottom:5px;
+    }
+
+    .mini-card p,
+    .mini-card li{
+      font-size:11.5px;
+      color:#475569;
+    }
+
+    .mini-card ul{
+      padding-left:18px;
+    }
+
+    .links{
+      margin-top:10px;
+      font-size:11px;
+    }
+
+    .links span{
+      color:var(--blue);
+      font-weight:700;
+    }
+
+    .links a{
+      color:var(--navy);
+      font-weight:600;
+      text-decoration:none;
+    }
+
+    .links a:hover{
+      color:var(--blue);
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeIn{
+
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px){
+
+      body{
+        padding:0;
+      }
+
+      .resume-page{
+        width:100%;
+        border-radius:0;
+        grid-template-columns:1fr;
+      }
+
+      .main{
+        padding:24px;
+      }
+
+      .main h1{
+        font-size:28px;
+      }
+
+      .two-col{
+        grid-template-columns:1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="resume-page">
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar">
+
+    <div class="profile-box">
+
+      <div class="profile-ring">
+        <img src="ppofsaad.png"
+        alt="Mohammad Saad Memon"
+        class="profile-img">
+      </div>
+
+      <div class="profile-name">
+        MOHAMMAD<br>
+        SAAD MEMON
+      </div>
+
+      <div class="profile-title">
+        Web Developer | Python Developer | Creative Designer
+      </div>
+
+    </div>
+
+    <!-- CONTACT -->
+
+    <div class="side-section">
+
+      <h2 class="side-heading">
+        Contact
+      </h2>
+
+      <ul class="contact-list">
+
+        <li>
+          <strong>Phone:</strong><br>
+          <a href="tel:+916358028755">
+            +91 6358028755
+          </a>
+        </li>
+
+        <li>
+          <strong>Email:</strong><br>
+          <a href="mailto:9saad2005@gmail.com">
+            9saad2005@gmail.com
+          </a>
+        </li>
+
+        <li>
+          <strong>GitHub:</strong><br>
+          <a href="https://github.com/iamsaadmemon"
+          target="_blank">
+            github.com/iamsaadmemon
+          </a>
+        </li>
+
+        <li>
+          <strong>Instagram:</strong><br>
+          <a href="https://instagram.com/iamsaad_memon"
+          target="_blank">
+            @iamsaad_memon
+          </a>
+        </li>
+
+        <li>
+          <strong>Address:</strong><br>
+          706, Khatri United SRA,<br>
+          Behind Meghani School,<br>
+          Behram Baugh,<br>
+          Jogeshwari West,<br>
+          Mumbai - 400102
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- SKILLS -->
+
+    <div class="side-section">
+
+      <h2 class="side-heading">
+        Core Skills
+      </h2>
+
+      <ul class="skill-list">
+        <li>HTML, CSS, JavaScript</li>
+        <li>Python Programming</li>
+        <li>Responsive UI Design</li>
+        <li>Frontend Development</li>
+        <li>Creative Branding</li>
+        <li>Git & GitHub</li>
+        <li>Prompt Engineering</li>
+        <li>Graphic Designing</li>
+        <li>AI Assisted Workflow</li>
+      </ul>
+
+    </div>
+
+    <!-- TOOLS -->
+
+    <div class="side-section">
+
+      <h2 class="side-heading">
+        Tools
+      </h2>
+
+      <ul class="skill-list">
+        <li>VS Code</li>
+        <li>Figma</li>
+        <li>Canva</li>
+        <li>Photopea</li>
+        <li>GitHub</li>
+        <li>CorelDRAW</li>
+      </ul>
+
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+
+  <main class="main">
+
+    <h1>
+      Mohammad Saad Memon
+    </h1>
+
+    <div class="headline">
+      Web Developer | Python Developer | Creative Designer
+    </div>
+
+    <!-- SUMMARY -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        Professional Summary
+      </h2>
+
+      <p class="summary">
+        Motivated and creative BScIT graduate from KHMW College of
+        Science and Commerce with strong interest in web development,
+        Python programming, UI/UX design, and AI-assisted workflows.
+        Skilled in creating responsive web interfaces, modern digital
+        experiences, and professional branding designs.
+        Passionate about learning new technologies and building
+        impactful projects with clean user-focused design.
+      </p>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        Featured Projects
+      </h2>
+
+      <div class="project-card">
+
+        <div class="project-title">
+          Premium Resume UI
+        </div>
+
+        <div class="project-meta">
+          HTML | CSS | Modern UI Design
+        </div>
+
+        <p>
+          Developed premium responsive resume interfaces
+          with glassmorphism effects, animations, and
+          professional layouts.
+        </p>
+
+      </div>
+
+      <div class="project-card">
+
+        <div class="project-title">
+          Social Media Branding
+        </div>
+
+        <div class="project-meta">
+          Branding | Creative Design
+        </div>
+
+        <p>
+          Designed professional Instagram creatives,
+          social media posts, and branding concepts
+          with modern visual aesthetics.
+        </p>
+
+      </div>
+
+      <div class="project-card">
+
+        <div class="project-title">
+          Portfolio Website
+        </div>
+
+        <div class="project-meta">
+          Frontend Development | Responsive Design
+        </div>
+
+        <p>
+          Created portfolio website concepts focused
+          on clean layouts, responsiveness, and
+          professional presentation.
+        </p>
+
+      </div>
+
+      <div class="project-card">
+
+        <div class="project-title">
+          Python Utility Projects
+        </div>
+
+        <div class="project-meta">
+          Python | Automation | Logic Building
+        </div>
+
+        <p>
+          Built beginner-friendly Python projects
+          focused on automation, scripting,
+          and problem-solving fundamentals.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- EDUCATION + EXPERIENCE -->
+
+    <section class="section two-col">
+
+      <!-- EDUCATION -->
+
+      <div class="mini-card">
+
+        <h2 class="section-title">
+          Education
+        </h2>
+
+        <h3>
+          Bachelor of Science in Information Technology
+        </h3>
+
+        <p>
+          KHMW College of Science and Commerce
+        </p>
+
+        <p>
+          <strong>Passing Year:</strong> 2025 - 2026
+        </p>
+
+        <p>
+          <strong>Status:</strong> Graduate
+        </p>
+
+      </div>
+
+      <!-- EXPERIENCE -->
+
+      <div class="mini-card">
+
+        <h2 class="section-title">
+          Experience
+        </h2>
+
+        <h3>
+          Clothing Sales Executive
+        </h3>
+
+        <p>
+          Retail Clothing Store
+        </p>
+
+        <p>
+          <strong>Duration:</strong> 6 Months
+        </p>
+
+        <ul>
+          <li>Handled customer interactions professionally</li>
+          <li>Assisted customers with clothing selection</li>
+          <li>Managed product presentation and stock display</li>
+          <li>Developed communication and sales skills</li>
+        </ul>
+
+      </div>
+
+    </section>
+
+    <!-- ADDITIONAL -->
+
+    <section class="section">
+
+      <h2 class="section-title">
+        Additional Information
+      </h2>
+
+      <p class="summary">
+        Passionate about technology, premium design systems,
+        frontend development, Python programming,
+        AI-assisted tools, and creative branding experiences.
+        Continuously improving skills in modern web
+        technologies and digital product design.
+      </p>
+
+      <p class="links">
+
+        <span>GitHub:</span>
+
+        <a href="https://github.com/iamsaadmemon"
+        target="_blank">
+          github.com/iamsaadmemon
+        </a>
+
+      </p>
+
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>
